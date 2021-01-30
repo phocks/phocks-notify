@@ -28,12 +28,12 @@ const saveSubscription = async (subscription) => {
 };
 
 const showLocalNotification = (title, body, swRegistration) => {
-    const options = {
-      body,
-      // here you can add more properties like icon, image, vibrate, etc.
-    };
-    swRegistration.showNotification(title, options);
+  const options = {
+    body,
+    // here you can add more properties like icon, image, vibrate, etc.
   };
+  swRegistration.showNotification(title, options);
+};
 
 self.addEventListener("activate", async () => {
   // This will be called only once when the service worker is activated.
@@ -51,13 +51,11 @@ self.addEventListener("activate", async () => {
   }
 });
 
-self.addEventListener('push', function(event) {
-    if (event.data) {
-      console.log('Push event!! ', event.data.text())
-      showLocalNotification('Yolo', event.data.text(), self.registration)
-    } else {
-      console.log('Push event but no data')
-    }
-  })
-
-
+self.addEventListener("push", function (event) {
+  if (event.data) {
+    console.log("Push event!! ", event.data.text());
+    showLocalNotification("Yolo", event.data.text(), self.registration);
+  } else {
+    console.log("Push event but no data");
+  }
+});

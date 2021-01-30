@@ -10,7 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build"
+    "build": "snowpack build --config snowpack.config.js"
   },
   "author": "",
   "license": "ISC"
